@@ -1,4 +1,4 @@
-
+"""
 from fastapi import FastAPI
 from app.routers import auth
 from .routers import users, posts, votes
@@ -34,3 +34,20 @@ app.include_router(users.router)
 # app.include_router(votes.router)
 
 # print("helloworld")
+"""
+
+from fastapi import FastAPI, APIRouter
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"message": "✅ It works from Railway!"}
+
+router = APIRouter()
+
+@router.get("/test")
+def test_route():
+    return {"message": "✅ Test route active"}
+
+app.include_router(router)
