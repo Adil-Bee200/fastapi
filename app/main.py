@@ -10,7 +10,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 print("🔥 App startup initiated...")
 
-models.Base.metadata.create_all(bind=engine)
+## models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
