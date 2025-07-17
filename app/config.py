@@ -5,11 +5,11 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     database_url: str | None = None
 
-    database_hostname : str
-    database_port : str
-    database_password : str
-    database_name : str 
-    database_username : str
+    database_hostname : str = "localhost"
+    database_port : str = "5432"
+    database_password : str = "pass"
+    database_name : str = "db"
+    database_username : str = "user"
     secret_key : str 
     algorithm : str 
     access_token_expire_minutes : str
