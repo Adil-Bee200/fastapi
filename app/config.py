@@ -22,7 +22,7 @@ class Settings(BaseSettings):
             f'postgresql://{self.database_username}:{self.database_password}@{self.database_hostname}:{self.database_port}/{self.database_name}'
         )
 
-    class Config:
-        env_file = ".env"
+    ##class Config:              <UNCOMMENT THIS FOR LOCAL RUNNING>
+        ##env_file = ".env"
 
 settings = Settings()
