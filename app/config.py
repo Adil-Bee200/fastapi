@@ -1,4 +1,5 @@
-from pydantic_settings import BaseSettings
+import os
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 
@@ -21,6 +22,10 @@ class Settings(BaseSettings):
         return (
             f'postgresql://{self.database_username}:{self.database_password}@{self.database_hostname}:{self.database_port}/{self.database_name}'
         )
+    
+    model_config = SettingsConfigDict(
+        env_file=".env" if os.getenv("RAILWAY_ENVIRONMENT") is None else None
+    )
 
     ##class Config:              <UNCOMMENT THIS FOR LOCAL RUNNING>
         ##env_file = ".env"
