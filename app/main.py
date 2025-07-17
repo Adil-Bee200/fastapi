@@ -4,7 +4,6 @@ from app.routers import auth
 from .routers import users, posts, votes
 from . import models
 from .database import engine
-from .config import settings
 from fastapi.middleware.cors import CORSMiddleware
 
 models.Base.metadata.create_all(bind=engine)
