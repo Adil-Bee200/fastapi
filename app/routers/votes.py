@@ -11,7 +11,7 @@ router = APIRouter(
     tags=['Vote']
 )
 
-@router.post("/", status_code= status.HTTP_201_CREATED)
+@router.post("", status_code= status.HTTP_201_CREATED)
 def vote(vote: schema.Vote, db: Session = Depends(database.get_db), current_user : int = Depends(oauth2.get_current_user)):
     find_post_query = db.query(models.Votes).filter(models.Votes.post_id == vote.post_id)
 
